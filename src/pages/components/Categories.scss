@@ -1,0 +1,63 @@
+.category-nav {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(33.3333%, 1fr);
+  overflow-x: scroll;
+  grid-column: 1 / -1;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    border: 1px solid #525151;
+    background-clip: padding-box;
+  }
+
+  .cat-name {
+    justify-items: center;
+    width: 90%;
+    font-size: 1.7vw;
+    background: linear-gradient(
+      90deg,
+      rgba(183, 255, 170, 1) 0%,
+      rgba(117, 255, 207, 1) 48%,
+      rgba(0, 232, 255, 1) 100%
+    );
+    padding: 10px 5px;
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    grid-auto-columns: minmax(50%, 1fr);
+    height: auto;
+
+    .cat-name {
+      font-size: 3.5vw;
+    }
+
+    &::-webkit-scrollbar {
+      width: 16px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+.restaurant-list {
+  font-size: 1rem;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 100px;
+  justify-items: center;
+  margin-top: 30px;
+  @media screen and (max-width: 600px) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px 30px;
+  }
+}
+
+.reset-filters {
+  display: flex;
+  height: 15vh;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  max-width: 80%;
+
+  button {
+    margin: 0;
+    display: flexbox;
+    padding: 10px 20px;
+    font-size: 1.7vw;
+    background: linear-gradient(
+      90deg,
+      rgba(183, 255, 170, 0.2) 0%,
+      rgba(117, 255, 207, 0.2) 48%,
+      rgba(0, 232, 255, 0.2) 100%
+    );
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  @media screen and (max-width: 600px) {
+    height: 10vh;
+  }
+}
+
+.loading {
+  padding-top: 50px;
+  font-size: 5vw;
+  justify-self: center;
+}
+
+.loading:after {
+  content: '...';
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  animation: ellipsis-dot 1s infinite 0.3s;
+  animation-fill-mode: forwards;
+  width: 1.25em;
+}
+
+@keyframes ellipsis-dot {
+  25% {
+    content: '';
+  }
+  50% {
+    content: '.';
+  }
+  75% {
+    content: '..';
+  }
+  100% {
+    content: '...';
+  }
+}

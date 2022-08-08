@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  justify-items: center;
+  display: grid;
+  max-width: 70vw;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: 100%;
+  @media screen and (max-width: 600px) {
+    max-width: 100vh;
+  }
 }
 
 .App-logo {
