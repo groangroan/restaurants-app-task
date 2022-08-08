@@ -11,6 +11,8 @@ const RestaurantsList = () => {
   const [activeCategory, setActiveCategory] = useState('');
   const [offset, setOffset] = useState(0);
 
+  // Function for calling the Yelp Fusion API and loading restaurants and storin the needed data
+
   const loadRestaurants = () => {
     axios
       .get(
@@ -50,6 +52,7 @@ const RestaurantsList = () => {
     loadRestaurants();
   }, [offset]);
 
+  // Infinite scroll function
   useEffect(() => {
     const handleScroll = (el) => {
       if (
@@ -64,6 +67,7 @@ const RestaurantsList = () => {
     window.addEventListener('scroll', handleScroll);
   }, [offset]);
 
+  // Setting up filters for categogries
   useEffect(() => {
     if (!activeCategory) {
       setFilteredRestaurants(restaurants);
